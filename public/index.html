@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>Smart City IOTA</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="bootstrap.min.css">
+  </head>
+  <body>
+    
+    
+    <div class="container">
+        <h1>Smart City IOTA</h1>
+  <div class="form-group">
+    <label for="userNameInput">Joueur</label>
+    <input type="text" class="form-control" id="userNameInput" aria-describedby="userNameHelp" placeholder="Saisissez votre nom">
+    <small id="userNameHelp" class="form-text text-muted">Nom du joueur pour Tetris...</small>
+  </div>
+
+  <button type="submit" class="btn btn-primary" onclick="loadDoc()">Submit</button>
+  <div id="demo"></div>
+    </div>
+
+    <script>
+        function loadDoc() {
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("demo").innerHTML = this.responseText;
+            }
+          };
+          xhttp.open("POST", "/submit-form", true);
+          xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+          xhttp.send("username=" + document.getElementById("userNameInput").value);
+        }
+        </script>
+  </body>
+</html>
