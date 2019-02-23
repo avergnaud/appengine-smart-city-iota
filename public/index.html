@@ -6,32 +6,45 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
+    <meta
+      name="google-signin-client_id"
+      content="955369598263-41nek13o5fk17ituf5dn7psib3sesmpn.apps.googleusercontent.com"
+    />
     <link rel="stylesheet" href="bootstrap.min.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>Smart City IOTA</h1>
-      <div class="form-group">
-        <label for="userNameInput">Joueur</label>
-        <input
-          type="text"
-          class="form-control"
-          id="userNameInput"
-          aria-describedby="userNameHelp"
-          placeholder="Saisissez votre nom"
-        />
-        <small id="userNameHelp" class="form-text text-muted"
-          >Nom du joueur pour Tetris...</small
-        >
-      </div>
 
-      <button type="submit" class="btn btn-primary" onclick="loadDoc()">
-        Envoyer
-      </button>
-      <div id="demo"></div>
-    </div>
+      <div class="container">
+          <h1>Smart City IOTA</h1>
+          <div class="form-group">
+            <label for="userNameInput">Joueur</label>
+            <input
+              type="text"
+              class="form-control"
+              id="userNameInput"
+              aria-describedby="userNameHelp"
+              placeholder="Saisissez votre nom"
+            />
+            <small id="userNameHelp" class="form-text text-muted"
+              >Nom du joueur pour Tetris...</small
+            >
+          </div>
+    
+          <button type="submit" class="btn btn-primary" onclick="frontModule.envoyerJoueur()">
+            Envoyer
+          </button>
+          <div id="demo"></div>
+        </div>
+
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <div id="signed-in-mail"></div>
+
+    <a href="#" onclick="frontModule.signOut();">Sign out</a>
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 
     <script src="index.js">
-    </script>
+      </script>
+
   </body>
 </html>
