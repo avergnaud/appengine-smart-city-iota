@@ -43,16 +43,18 @@ const address =
         }
       ];
       
-      iota
+      return iota
         .prepareTransfers(seed, transfers)
-        .then(trytes => iota.sendTrytes(trytes, 3, 14))
+        .then(trytes => iota.sendTrytes(trytes, 3, 14));
+
+        /*
         .then(bundle => {
           console.log(bundle);
         })
         .catch(err => {
-          // catch any errors
           console.log(err);
         });
+        */
     }
   };
 
