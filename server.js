@@ -39,7 +39,7 @@ app.post("/submit-form", (req, res) => {
   })
   .catch(error => {
     console.log(error)
-    res.send("erreur")
+    res.send(error)
   });
 });
 
