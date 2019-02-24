@@ -1,0 +1,38 @@
+body {
+    background: #f4f4f4;
+    margin: 0;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+.wrapper {
+    display: grid;
+    height:100vh;
+}
+
+  .center {
+    text-align: center;
+    margin: auto;
+  }
+
+.cent {
+    width: 100%;
+}
+
+#logo {
+    width: 50%;
+}
+
+#bouton {
+    margin-top: 5px;
+}
+
+#retour {
+    width: 330px;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+
+#securite {
+    font-size: 13px;
+}

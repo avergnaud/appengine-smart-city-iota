@@ -15,9 +15,6 @@ const iota = Iota.composeAPI({
 
 const seed = process.env.SEED;
 
-const message = Converter.asciiToTrytes('I will send you 1i for just because i can...')
-console.log("message trytes " + message)
-
 // Call the 'getNodeInfo call to check that the node is working
 /*
 iota.getNodeInfo()
@@ -32,7 +29,10 @@ const address =
     send: function (name) {
       // whatever
       //const tag = name;
-      const tag = Converter.asciiToTrytes(name)
+      const tag = Converter.asciiToTrytes("catamania")
+
+      const message = Converter.asciiToTrytes(name)
+      console.log("message trytes " + message)
       
       const transfers = [
         {

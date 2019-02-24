@@ -34,8 +34,8 @@ app.post("/submit-form", (req, res) => {
     return iotautil.send(username)
   })
   .then(bundle => {
-    console.log(bundle);
-    res.send("transaction envoyée pour " + username + ". " + bundle[0].hash);
+    console.log(bundle[0].hash);
+    res.send("transaction envoyée pour " + username);
   })
   .catch(error => {
     console.log(error)

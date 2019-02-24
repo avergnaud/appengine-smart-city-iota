@@ -8,7 +8,8 @@ var frontModule = (function() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("demo").innerHTML = this.responseText;
+        document.getElementById("retour").innerHTML = this.responseText;
+        document.getElementById("userNameInput").value = "";
       }
     };
     xhttp.open("POST", "/submit-form", true);

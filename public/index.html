@@ -11,40 +11,46 @@
       content="955369598263-41nek13o5fk17ituf5dn7psib3sesmpn.apps.googleusercontent.com"
     />
     <link rel="stylesheet" href="bootstrap.min.css" />
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
+    <div class="container wrapper">
 
-      <div class="container">
-          <h1>Smart City IOTA</h1>
-          <div class="form-group">
-            <label for="userNameInput">Joueur</label>
-            <input
-              type="text"
-              class="form-control"
-              id="userNameInput"
-              aria-describedby="userNameHelp"
-              placeholder="Saisissez votre nom"
-            />
-            <small id="userNameHelp" class="form-text text-muted"
-              >Nom du joueur pour Tetris...</small
-            >
-          </div>
-    
-          <button type="submit" class="btn btn-primary" onclick="frontModule.envoyerJoueur()">
-            Envoyer
-          </button>
-          <div id="demo"></div>
-        </div>
+      <div class="center">
+        <img id="logo" src="iota-logo.png" />
+      </div>
 
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
-    <div id="signed-in-mail"></div>
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          id="userNameInput"
+          aria-describedby="userNameHelp"
+          placeholder="Saisissez votre nom"
+        />
+        <button
+          id="bouton"
+          type="submit"
+          class="btn btn-primary cent"
+          onclick="frontModule.envoyerJoueur()"
+        >
+          Jouer à Tetris
+        </button>
+      </div>
 
-    <a href="#" onclick="frontModule.signOut();">Sign out</a>
+      <div id="retour" class="cent"></div>
+
+      <div id="securite">
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <div id="signed-in-mail"></div>
+        <a href="#" onclick="frontModule.signOut();">Sign out</a>
+      </div>
+    </div>
+
+
 
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 
-    <script src="index.js">
-      </script>
-
+    <script src="index.js"></script>
   </body>
 </html>
