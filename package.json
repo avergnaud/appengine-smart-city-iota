@@ -13,6 +13,9 @@
     "bootstrap": "^4.3.1",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
-    "google-auth-library": "^3.1.0"
+    "google-auth-library": "^3.1.0",
+    "@iota/converter": "^1.0.0-beta.8",
+    "@iota/core": "^1.0.0-beta.8",
+    "@iota/curl-remote": "0.0.3"
   }
 }

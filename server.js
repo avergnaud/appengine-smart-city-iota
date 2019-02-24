@@ -1,6 +1,7 @@
 const express = require("express")
 const path = require("path")
 const {OAuth2Client} = require('google-auth-library')
+const iotautil = require("./iotautil")
 require('dotenv').config()
 
 authorized_google_id = process.env.authorized_google_id
@@ -27,9 +28,11 @@ app.post("/submit-form", (req, res) => {
   const id_token = req.body.id_token;
   verify(id_token)
   .then(success => {
+    iotautil.send(username)
     res.send("transaction en cours pour " + username + " ...");
   })
   .catch(error => {
+    console.log(error)
     res.send("erreur")
   });
 });
