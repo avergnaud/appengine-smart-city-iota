@@ -6,29 +6,6 @@ require('dotenv').config()
 
 
 
-var WebSocketServer = require('ws').Server,
-  wss = new WebSocketServer({port: 40510})
-
-var connexions = []
-
-wss.on('connection', function (ws) {
-  connexions.push(ws)
-  ws.on('message', function (message) {
-    console.log('received: %s', message)
-  })
-
-  /*
-  if(ws.readyState === ws.OPEN){
-   // Do your stuff...
-  }
-  setInterval(
-    () => ws.send(`${new Date()}`),
-    1000
-  )
-  */
-})
-
-
 
 authorized_google_id = process.env.authorized_google_id
 
@@ -58,11 +35,6 @@ app.post("/submit-form", (req, res) => {
   })
   .then(bundle => {
     console.log(bundle);
-    for(connexion of connexions) {
-      if(connexion.readyState === connexion.OPEN){
-        connexion.send("http://tangle.glumb.de/?hash=" + bundle[0].trunkTransaction)
-      }
-    }
     res.send("transaction en cours pour " + username + " ...");
   })
   .catch(error => {
