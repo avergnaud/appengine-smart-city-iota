@@ -1,4 +1,6 @@
 
+gcloud app deploy
+
 runtime: nodejs
 env: flex
 env_variables:
