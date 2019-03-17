@@ -4,10 +4,8 @@ const {OAuth2Client} = require('google-auth-library')
 const iotautil = require("./iotautil")
 require('dotenv').config()
 
-
-
-
-authorized_google_id = process.env.authorized_google_id
+authorized_google_ids = process.env.authorized_google_ids
+const authorized_google_ids_array = authorized_google_ids.split(" ")
 
 const app = express()
 const googleClientId = "955369598263-41nek13o5fk17ituf5dn7psib3sesmpn.apps.googleusercontent.com"
@@ -60,7 +58,7 @@ async function verify(token) {
   });
   const payload = ticket.getPayload();
   var userid = payload['sub'];
-  if(userid !== authorized_google_id) {
+  if(!authorized_google_ids_array.includes(userid)) {
     throw new Error("userid non autorisé");
   }
 }
